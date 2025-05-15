@@ -1,0 +1,12 @@
+# Основные зависимости
+aiohttp==3.9.3
+pydantic>=2.1.0
+pydantic-settings>=2.9.1
+PyYAML==6.0.1
+lxml==5.4.0
+python-dateutil>=2.8.2
+aiofiles==23.2.1
+pytest==8.3.5
+pytest-asyncio==0.26.0
+typer==0.15.4
+click==8.1.8

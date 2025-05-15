@@ -1,0 +1,34 @@
+parsers:
+  winestyle:
+    pass
+  knifecenter:
+    # Knifecenter specific settings overrides
+    concurrency: 1
+    sessions_count: 1
+    delay: 1.0
+    timeout: 30
+    retry:
+      count: 3
+      delay: 1.0
+      backoff_factor: 2.0
+      max_delay: 30.0
+      status_codes:
+      - 408
+      - 429
+      - 500
+      - 502
+      - 503
+      - 504
+    proxy:
+      file: "proxies.txt"
+    storage:
+      type: "csv" # This could be overridden by CLI '--output-type json'
+    batch:
+      size: 20
+      delay: 1.0
+    user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+    use_proxy: true
+    deduplication:
+      primary_keys:
+      - "url"
+      - "sku"
